@@ -92,4 +92,16 @@ const getday = () => {
     }
 }
 
-console.log(`Today is ${getday()}`)
+// console.log(`Today is ${getday()}`)
+document.getElementById("demo").innerHTML = `Today is ${getday()}`
+
+function prosesData(data, callback) {
+    let res = data.toUpperCase()
+    callback(res)
+}
+
+function showRes(output) {
+    document.getElementById("demo").innerHTML = `Teks: ${output}`
+}
+
+prosesData("halo dunia", showRes)
