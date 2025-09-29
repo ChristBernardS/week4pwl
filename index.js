@@ -63,45 +63,92 @@ const harilain = {
 // case(1) --> case 1: ...., case 2: ...., case 3: ....
 // langsung case 1, tanpa melalui case lain
 
-// Part 3
-const getday = () => {
-    switch (new Date().getDay()) {
-        case 0:
-            return "Sunday";
-            break
-        case 1:
-            return "Monday";
-            break
-        case 2:
-            return "Tuesday";
-            break
-        case 3:
-            return "Wednesday";
-            break
-        case 4:
-            return "Thursday";
-            break
-        case 5:
-            return "Friday";
-            break
-        case 6:
-            return "Saturday";
-            break
-        default:
-            return "Tidak ada pilihan";
-    }
+// // Part 3
+// const getday = () => {
+//     switch (new Date().getDay()) {
+//         case 0:
+//             return "Sunday";
+//             break
+//         case 1:
+//             return "Monday";
+//             break
+//         case 2:
+//             return "Tuesday";
+//             break
+//         case 3:
+//             return "Wednesday";
+//             break
+//         case 4:
+//             return "Thursday";
+//             break
+//         case 5:
+//             return "Friday";
+//             break
+//         case 6:
+//             return "Saturday";
+//             break
+//         default:
+//             return "Tidak ada pilihan";
+//     }
+// }
+
+// // console.log(`Today is ${getday()}`)
+// document.getElementById("demo").innerHTML = `Today is ${getday()}`
+
+// function prosesData(data, callback) {
+//     let res = data.toUpperCase()
+//     callback(res)
+// }
+
+// function showRes(output) {
+//     document.getElementById("demo").innerHTML = `Teks: ${output}`
+// }
+
+// prosesData("halo dunia", showRes)
+
+// // Part 4
+// function getData() {
+//     return new Promise((resolve, reject) => {
+//         document.getElementById("demo").innerHTML = "Loading..."
+
+//         setTimeout(() => {
+//             const sukses = true
+
+//             if (sukses) {
+//                 resolve("Data Berhasil Dikirim")
+//             } else {
+//                 reject("Gagal mengirimkan data")
+//             }
+//         }, 2000)
+//     })
+// }
+
+// getData()
+// .then(result => {
+//     document.getElementById("demo").innerHTML = result
+// })
+// .catch(error => {
+//     document.getElementById("demo").innerHTML = error
+// })
+
+// Part 5
+function nodesatu() {
+    console.log("node 1")
 }
 
-// console.log(`Today is ${getday()}`)
-document.getElementById("demo").innerHTML = `Today is ${getday()}`
-
-function prosesData(data, callback) {
-    let res = data.toUpperCase()
-    callback(res)
+function nodedua() {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            console.log("Node 2")
+        }, 3000)
+    })
+    console.log("node 2")
 }
 
-function showRes(output) {
-    document.getElementById("demo").innerHTML = `Teks: ${output}`
+function nodetiga() {
+    console.log("node 3")
 }
 
-prosesData("halo dunia", showRes)
+nodesatu()
+nodedua()
+nodetiga()
